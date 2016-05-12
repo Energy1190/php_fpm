@@ -14,6 +14,7 @@ RUN apt-get update && \
         php5-memcache \
         php5-curl \
         curl \
+        sendmail \
      && rm -rf /var/lib/apt/lists/*
     
 RUN curl -sS https://getcomposer.org/installer | php
