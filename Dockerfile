@@ -19,6 +19,7 @@ RUN apt-get update && \
     
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar require mailgun/mailgun-php:~2.0
+RUN php composer.phar require phpmailer/phpmailer:~5.2
 
 RUN sed -e 's/^listen = .*/listen = 9000/' -i /etc/php5/fpm/pool.d/www.conf \
 	&& sed -e 's/^;security\.limit_extensions = .*/security\.limit_extensions = \.php \.php3 \.php4 \.php5 \.phtml/' -i /etc/php5/fpm/pool.d/www.conf
