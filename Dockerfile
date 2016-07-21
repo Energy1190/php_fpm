@@ -16,6 +16,7 @@ RUN apt-get update && \
         curl \
         sendmail \
         perl \
+        mysql-client \
      && rm -rf /var/lib/apt/lists/*
     
 RUN curl -sS https://getcomposer.org/installer | php
