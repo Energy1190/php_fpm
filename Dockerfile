@@ -1,24 +1,5 @@
-FROM 5.6-fpm-alpine
+FROM php:5.6-fpm-alpine
 
-RUN apt-get update && \
-    apt-get install -y $buildDeps \
-        php5-cli \
-        php5-common \
-        php5-mysql \
-        php5-gd \
-        php5-fpm \
-        php5-cgi \
-        php5-fpm \
-        php-pear \
-        php5-mcrypt \
-        php5-memcache \
-        php5-curl \
-        curl \
-        sendmail \
-        perl \
-        mysql-client \
-     && rm -rf /var/lib/apt/lists/*
-    
 RUN curl -sS https://getcomposer.org/installer | php
 RUN php composer.phar require mailgun/mailgun-php:~2.0
 RUN php composer.phar require phpmailer/phpmailer:~5.2
